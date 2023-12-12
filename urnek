@@ -1,0 +1,439 @@
+hajde zaboravi. ovo je moj html <!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prodaja Cvijeća</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo Cvijećara">
+        </div>
+        <div class="menu-toggle">
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+        </div>
+    </header>
+    <nav class="menu">
+        <ul>
+            <li><a href="#">Buketi</a></li>
+            <li><a href="#">Veliki Buketi</a></li>
+            <!-- Dodajte ostale opcije menija ovdje -->
+        </ul>
+    </nav>
+
+<!-- Dodajte ovaj HTML ispod vašeg headera i iznad footer-a -->
+<section class="flowers">
+    <h2>Odaberite Cvijeće</h2>
+    <div class="flower-container">
+        <div class="flower">
+            <img src="images/download.jpg" alt="Cvijet 1">
+            <p class="price">Cijena: $10</p>
+            <p class="name">Cvijet 1</p>
+        </div>
+        <div class="flower">
+            <img src="images/c4.png" alt="Cvijet 2">
+            <p class="price">Cijena: $15</p>
+            <p class="name">Cvijet 2</p>
+        </div>
+        <div class="flower">
+            <img src="images/caj.jpg" alt="Cvijet 3">
+            <p class="price">Cijena: $12</p>
+            <p class="name">Cvijet 3</p>
+        </div>
+        <div class="flower">
+            <img src="images/cajholesterol.png" alt="Cvijet 4">
+            <p class="price">Cijena: $18</p>
+            <p class="name">Cvijet 4</p>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+</body>
+</html>
+                                   A OVO JE CSS   /* Resetiranje stilova za osnovni izgled stranice */
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Onemogući pomicanje stranice lijevo-desno */
+}
+
+/* Stil za header */
+header {
+    background-color: #fff; /* Boja pozadine */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sjena ispod headera */
+}
+
+/* Stil za logo */
+.logo img {
+    width: 150px; /* Prilagodite veličinu vašem logotipu */
+}
+
+/* Stil za ikonu za otvaranje menija */
+.menu-toggle {
+    display: none; /* Početno sakrijte ikonu na većim ekranima */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-line {
+    width: 25px;
+    height: 3px;
+    background-color: #333; /* Boja linija */
+    margin: 3px 0;
+}
+
+/* Stil za navigacijski meni */
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Dodajte ovu liniju kako biste postavili smjer na "column" */
+}
+
+.menu li {
+    margin-right: 20px; /* Razmak između opcija menija */
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333; /* Boja teksta */
+    font-weight: bold;
+    transition: color 0.3s ease; /* Animacija promjene boje teksta */
+}
+
+.menu a:hover {
+    color: #ff6600; /* Boja teksta prilikom prelaska mišem */
+}
+
+/* Stil za prikaz ikone za otvaranje menija na manjim ekranima */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .menu {
+        display: none; /* Početno sakrijte meni na manjim ekranima */
+        position: absolute;
+        top: 60px; /* Visina headera plus razmak */
+        right: 20px;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        width: 150px;
+        z-index: 1;
+        
+    }
+
+    .menu.active {
+        display: flex;
+       
+    }
+}
+
+
+
+/* Stil za odabir cvijeća */
+.flowers {
+    background-color: #f7f7f7;
+    padding: 20px;
+    text-align: center;
+}
+
+.flowers h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.flower-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.flower {
+    width: calc(20% - 1px); /* 25% širine sa razmakom između (za desktop) */
+    margin: 10px;
+    text-align: center;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Stil za mobilnu verziju */
+@media (max-width: 768px) {
+    .flower {
+        width: calc(40% - 8px); /* 50% širine sa razmakom između (za mobilno) */
+    }
+
+    .flowers .flower-container {
+        justify-content: space-between; /* Razmak između 2 slike u redu na mobilnoj verziji */
+    }
+}
+
+
+
+/* Stil za smanjenje veličine slika */
+.flower img {
+    max-width: 100%; /* Maksimalna širina slike je 100% širine roditeljskog elementa */
+    max-height: 150px; /* Maksimalna visina slike (prilagodite prema potrebi) */
+}
+
+
+
+
+
+
+
+
+
+
+<section class="flower-details">
+    <div class="flower-image">
+        <img src="images/D4.jpeg" alt="Roza buket">
+    </div>
+    <div class="flower-info">
+        <h2 style="color: pink;">Roza Buket</h2>
+        <p style="color: pink;">Cijena: $20</p>
+        <p>Ovaj predivan roza buket donosi svježinu i eleganciju u svaku priliku. Savršen je izbor za posebne trenutke i darivanje voljenim osobama.</p>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Dodajte ovo na dno vašeg HTML koda, nakon što su definisane vaše info-box komponente i dugme "NARUČI" -->
+<script>
+    const inputFields = document.querySelectorAll('.info-container input, .info-container textarea');
+    const naruciButton = document.getElementById('naruciButton');
+
+    // Kreirajte funkciju koja proverava da li su sva polja popunjena
+    function proveriPopunjenostPolja() {
+        let svaPoljaPopunjena = true;
+        inputFields.forEach(function(field) {
+            if (field.value === '') {
+                svaPoljaPopunjena = false;
+            }
+        });
+
+        // Omogućite dugme "NARUČI" ako su sva polja popunjena, inače onemogućite
+        naruciButton.disabled = !svaPoljaPopunjena;
+    }
+
+    // Dodajte event listener na svako input polje i textarea
+    inputFields.forEach(function(field) {
+        field.addEventListener('input', proveriPopunjenostPolja);
+    });
+
+    // Event listener za klik na dugme "NARUČI"
+    naruciButton.addEventListener('click', function(event) {
+        // Ako sva polja nisu popunjena, sprečite slanje forme
+        if (!proveriPopunjenostPolja()) {
+            event.preventDefault();
+        }
+    });
+</script>
+
+
+
+
+
+
+
+
+<div class="form-subtitle" id="openInfoSectionLabel"><i class="fas fa-chevron-down form-arrow"></i>  Unesi podatke <span></span></div>
+
+<!-- HTML forma -->
+<div class="info-container" id="infoContainer">
+    <div class="info-box">
+        <input type="text" id="imePrezimePosiljaoca" name="imePrezimePosiljaoca" placeholder="Unesite ime i prezime pošiljaoca">
+    </div>
+    <div class="info-box">
+        <input type="email" id="emailPosiljaoca" name="emailPosiljaoca" placeholder="Unesite email pošiljaoca">
+    </div>
+    <div class="info-box">
+        <input type="tel" id="telefonPosiljaoca" name="telefonPosiljaoca" placeholder="Unesite telefon pošiljaoca">
+    </div>
+    <div class="info-box">
+        <input type="text" id="imePrezimePrimaoca" name="imePrezimePrimaoca" placeholder="Unesite ime i prezime primaoca">
+    </div>
+    <div class="info-box">
+        <input type="tel" id="telefonPrimaoca" name="telefonPrimaoca" placeholder="Unesite telefon primaoca">
+    </div>
+    <div class="info-box">
+        <input type="text" id="gradPrimaoca" name="gradPrimaoca" placeholder="Unesite grad primaoca">
+    </div>
+    <div class="info-box">
+        <input type="text" id="adresaPrimaoca" name="adresaPrimaoca" placeholder="Unesite adresu primaoca">
+    </div>
+    <div class="info-box">
+        <input type="text" id="datumIsporuke" name="datumIsporuke" placeholder="Unesite datum isporuke">
+    </div>
+    <div class="info-box">
+        <textarea id="poruka" name="poruka" placeholder="Unesite poruku"></textarea>
+    </div>
+    <input type="hidden" name="Proizvod" value="crveni buket">
+    <button class="naruci-dugme" id="naruciButton" disabled><span class="tekst-dugmeta">NARUČI</span></button>
+</div>
+
+<!-- jQuery i JavaScript kod -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Onemogući dugme "NARUČI" početno
+        $("#naruciButton").prop("disabled", true);
+
+        // Proveri da li su sva polja popunjena prilikom unosa
+        $("input, textarea").on("input", function() {
+            var allFieldsFilled = true;
+            $("input, textarea").each(function() {
+                if ($(this).val().trim() === "") {
+                    allFieldsFilled = false;
+                }
+            });
+            // Ako su sva polja popunjena, omogući dugme "NARUČI", inače ga onemogući
+            $("#naruciButton").prop("disabled", !allFieldsFilled);
+        });
+
+        // Klik na dugme "NARUČI"
+        $("#naruciButton").click(function(event) {
+            // Spriječi podnošenje obrasca
+            event.preventDefault();
+
+            // Spremite podatke iz formulara u objekt ako su sva polja popunjena
+            if ($("#imePrezimePosiljaoca").val().trim() !== "" &&
+                $("#emailPosiljaoca").val().trim() !== "" &&
+                $("#telefonPosiljaoca").val().trim() !== "" &&
+                $("#imePrezimePrimaoca").val().trim() !== "" &&
+                $("#telefonPrimaoca").val().trim() !== "" &&
+                $("#gradPrimaoca").val().trim() !== "" &&
+                $("#adresaPrimaoca").val().trim() !== "" &&
+                $("#datumIsporuke").val().trim() !== "" &&
+                $("#poruka").val().trim() !== "") {
+
+                var formData = {
+                    imePrezimePosiljaoca: $("#imePrezimePosiljaoca").val(),
+                    emailPosiljaoca: $("#emailPosiljaoca").val(),
+                    telefonPosiljaoca: $("#telefonPosiljaoca").val(),
+                    imePrezimePrimaoca: $("#imePrezimePrimaoca").val(),
+                    telefonPrimaoca: $("#telefonPrimaoca").val(),
+                    gradPrimaoca: $("#gradPrimaoca").val(),
+                    adresaPrimaoca: $("#adresaPrimaoca").val(),
+                    datumIsporuke: $("#datumIsporuke").val(),
+                    poruka: $("#poruka").val(),
+                    Proizvod: "crveni buket"
+                };
+
+                // Napravite AJAX poziv na FormsPree
+                $.ajax({
+                    url: "https://formspree.io/f/mjvqkzbv",
+                    method: "POST",
+                    data: formData,
+                    dataType: "json",
+                    success: function(response) {
+                        // Ovdje možete dodati kod za prikazivanje PayPal dugmeta ili drugih funkcionalnosti nakon što je forma uspješno poslana
+                        // Na primer, prikazivanje PayPal dugmeta ili redirekcija korisnika na PayPal stranicu.
+                    }
+                });
+            }
+        });
+    });
+</script>
+
+
+
+    
+    <div id="paypal-button-container" style="display: none;"></div>
+
+
+
+
+    <script>
+        // Pratite klik na dugme "Naruči"
+        $('#naruciButton').click(function() {
+            var additionalPrice = 10.00; // Osnovna cena
+            // Dodajte dodatnu cenu svakog čekiranog checkbox-a
+            $('input[type="checkbox"]:checked').each(function() {
+                additionalPrice += parseFloat($(this).data('price'));
+            });
+    
+            // Ažurirajte vrednost na PayPal dugmetu
+            paypal.Buttons({
+                createOrder: function(data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: additionalPrice.toFixed(2) // Postavite ukupnu vrednost
+                            }
+                        }]
+                    });
+                },
+                onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(details) {
+                        // Uspešno završena transakcija, obradite je ovde (npr. sačuvajte detalje u bazi podataka)
+                        alert('Transakcija uspešna: ' + details.payer.name.given_name);
+                    });
+                },
+                onError: function(err) {
+                    // Greška prilikom plaćanja, obradite je ovde
+                    console.error('Greška prilikom plaćanja:', err);
+                }
+            }).render('#paypal-button-container');
+        });
+    </script>
